@@ -43,6 +43,7 @@
 		if( this.bbWrapper ) {
 			this._initBookBlock();
 		}
+		this._initEvents();
 	}
 
 	Book.prototype._layout = function() {
@@ -72,7 +73,7 @@
 		this.ctrlBBPrev = this.bbWrapper.querySelector( ' .bb-nav-prev' );
 	}
 
-	Book.prototype.initEvents = function() {
+	Book.prototype._initEvents = function() {
 		var self = this;
 		if( !this.ctrls ) return;
 
@@ -151,8 +152,7 @@
 
 	function init() {
 		[].slice.call( books ).forEach( function( el ) {
-			var book = new Book( el );
-			book.initEvents();
+			new Book( el );
 		} );
 	}
 
