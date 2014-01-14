@@ -905,8 +905,8 @@ body {
 
 .details-open .details ul li {
     opacity: 1;
-    -webkit-transform: translateX();
-    transform: translateX();
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
 }
 
 /* Details background */
