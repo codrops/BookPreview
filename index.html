@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Book Preview with BookBlock</title>
+		<meta name="description" content="Book Preview with BookBlock" />
+		<meta name="keywords" content="BookBlock, book preview, look inside, css, transforms, animations, css3, 3d, perspective, fullscreen" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div id="scroll-wrap" class="container">
+			<header class="codrops-header">
+				<div class="codrops-top clearfix">
+					<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/"><span>Previous Demo</span></a>
+					<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18228"><span>Back to the Codrops Article</span></a></span>
+				</div>
+				<h1>Book Preview <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
+			</header>
+			<div class="main">
+				<div id="bookshelf" class="bookshelf">
+					<figure>
+						<div class="book" data-book="book-1"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>9 Lives <span>Andrew Hudson</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-2"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>Life of a worm <span>Will Flores</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Understanding the life of a worm can be enlightening to anybody. Dive into the micro cosmos of a creeping and burrowing invertebrate and learn how a limbless little creature reaches happiness.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-8"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>Lemon Rainbow <span>Christa Hausmann</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-3"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>Structure and Space <span>Carol Winter</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-4"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>The Rock Enigma <span>Walter C. Hamilton</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-5"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>An Introduction to Neural Science <span>Simon Abramovich</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-6"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>Life in Transit <span>Marina Dokova</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-7"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>Architecture <span>Ryan Cooper</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+					<figure>
+						<div class="book" data-book="book-9"></div>
+						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
+						<figcaption><h2>Digital Nomads <span>Kenny Garcia</span></h2></figcaption>
+						<div class="details">
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.</li>
+								<li>Graham Press</li>
+								<li>12.09.2010</li>
+								<li>397 pages</li>
+							</ul>
+						</div>
+					</figure>
+				</div>
+			</div><!-- /main -->
+			<div class="related">
+				<h3>If you enjoyed this demo you might also like:</h3>
+				<a href="http://tympanus.net/Development/AnimatedBooks/">
+					<img src="http://tympanus.net/codrops/wp-content/uploads/2013/07/AnimatedBooks1-300x162.png" />
+					<h3>Animated Books</h3>
+				</a>
+				<a href="http://tympanus.net/Development/3DBookShowcase/">
+					<img src="http://tympanus.net/codrops/wp-content/uploads/2013/01/3DBookShowcase_Main-300x162.jpg" />
+					<h3>3D Book Showcase</h3>
+				</a>
+			</div>
+		</div><!-- /container -->
+
+		<!-- Fullscreen BookBlock -->
+		<!-- for demo purpose we repeat each bookblock -->
+		<div class="bb-custom-wrapper" id="book-1">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-2">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-3">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-4">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-5">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-6">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-7">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-8">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<div class="bb-custom-wrapper" id="book-9">
+			<div class="bb-bookblock">
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-3">
+						<div>
+							<h3>Portraits</h3>
+							<p>Photography (1999 &ndash; 2013)</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-3">
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-1">
+						<h3>
+							Chapter 9 <span>Nomadic Lifestyle</span>
+						</h3>
+					</div>
+					<div class="bb-custom-side page-layout-1">
+						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+					</div>
+				</div>
+				<div class="bb-item">
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Aa</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Bb</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+					<div class="bb-custom-side page-layout-2">
+						<div>
+							<h3>Cc</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+						<div>
+							<h3>Dd</h3>
+							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /bb-bookblock -->
+			<nav>
+				<a href="#" class="bb-nav-prev">Previous</a>
+				<a href="#" class="bb-nav-next">Next</a>
+				<a href="#" class="bb-nav-close">Close</a>
+			</nav>
+		</div><!-- /bb-custom-wrapper -->
+		<script src="js/bookblock.min.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/bookshelf.js"></script>
+	</body>
+</html>

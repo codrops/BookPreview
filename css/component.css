@@ -1,0 +1,1002 @@
+/* Colors */
+
+html,
+body,
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.container.hide-overflow { overflow: hidden }
+
+.main {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.bookshelf {
+    position: relative;
+    margin: 40px auto 0;
+    list-style: none;
+    text-align: center;
+}
+
+.bookshelf figure {
+    position: relative;
+    display: inline-block;
+    margin: 40px 0 0 0;
+    padding: 45px 0;
+    max-width: 75%;
+    width: 324px;
+    vertical-align: top;
+}
+
+/* Perspectiv wrapper, figure and book */
+
+.perspective {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 1800px;
+    perspective: 1800px;
+}
+
+.book {
+    position: relative;
+    margin: 0 auto;
+    width: 180px;
+    height: 260px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.book div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cover {
+    z-index: 10;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.cover::before {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    visibility: hidden;
+    width: 20px;
+    height: 100%;
+    background: #000;
+    content: '';
+    -webkit-transform: translateX(-100%) rotateY(-90deg);
+    transform: translateX(-100%) rotateY(-90deg);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.front {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.inner {
+    border-width: 3px;
+    border-style: solid;
+    background-color: #fff;
+}
+
+.bookshelf .book .inner-left {
+    border-right: none;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.inner-right { border-left: none }
+
+/* Buttons and figcaption */
+
+.buttons {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 0 8px;
+    color: rgba(100, 105, 106, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.65em;
+    line-height: 1.5;
+}
+
+.buttons a:first-child:not(:only-child) { border-right: 1px solid rgba(100, 105, 106, 0.3) }
+
+.buttons a:hover,
+.buttons a:active { color: #64696a }
+
+.bookshelf figcaption {
+    position: relative;
+    top: 100%;
+    padding: 0 2em;
+    text-align: center;
+}
+
+.bookshelf figcaption h2 {
+    margin: 1em 0 0 0;
+    font-weight: 300;
+    font-size: 1.8em;
+    font-family: "Abril Fatface", serif;
+}
+
+.bookshelf figcaption h2 span {
+    position: relative;
+    display: block;
+    margin: 1em 0 0 0;
+    padding: 1em 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 0.4em;
+    font-family: "Lato", sans-serif;
+}
+
+.bookshelf figcaption h2 span::before,
+.details ul li:first-child::after {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 20%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    content: '';
+}
+
+/* Details panel */
+
+.details {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.details ul {
+    margin: 0;
+    padding: 60px 30px 0 30px;
+    list-style: none;
+    text-align: left;
+}
+
+.csstransformspreserve3d .details ul { padding: 60px 30px 0 70px }
+
+.details ul li {
+    margin: 0 0 10px;
+    font-weight: 300;
+}
+
+.details ul li:not(:first-child) { font-weight: 700 }
+
+.details ul li:first-child {
+    position: relative;
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    text-align: justify;
+}
+
+.details ul li:first-child::after {
+    top: 100%;
+    left: 0;
+}
+
+.close-details {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    visibility: hidden;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.details-open .close-details { visibility: visible }
+
+.close-details:hover { opacity: 1 }
+
+.close-details::before,
+.close-details::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: #333;
+    content: '';
+}
+
+.close-details::before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.close-details::after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Custom BookBlock */
+
+.bb-custom-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    border-width: 3px 10px;
+    border-style: solid;
+}
+
+.bb-custom-wrapper::before,
+.bb-custom-wrapper::after {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 10px;
+    height: 100%;
+    background: -webkit-linear-gradient(left, #dddddd 33.33%, #f0f0f0 33.33%, #f0f0f0 66.66%, white 66.66%);
+    background: linear-gradient(to right, #dddddd 33.33%, #f0f0f0 33.33%, #f0f0f0 66.66%, white 66.66%);
+    background-size: 3px 100%;
+    content: '';
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.bb-custom-wrapper::before { left: 0 }
+
+.bb-custom-wrapper::after { right: 0 }
+
+.bb-custom-wrapper .bb-bookblock {
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+}
+
+.bb-custom-side {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+}
+
+.bb-custom-side::before {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 80px;
+    height: 100%;
+    box-shadow: inset 30px 0 40px -20px rgba(0, 0, 0, 0.1);
+    content: '';
+}
+
+.bb-custom-side:first-child::before {
+    right: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.05), inset -30px 0 40px -20px rgba(0, 0, 0, 0.15);
+}
+
+.page-layout-1 h3,
+.page-layout-1 p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    max-width: 260px;
+    width: 100%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.page-layout-1 h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 3em;
+    font-family: "Sacramento", serif;
+}
+
+.page-layout-1 h3 span {
+    display: block;
+    padding: 5px 0 15px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-family: "Six Caps", sans-serif;
+    line-height: 1;
+}
+
+.page-layout-1 p {
+    padding: 0 10px;
+    text-align: right;
+    font-style: italic;
+    font-family: "Cardo", serif;
+}
+
+.page-layout-2 {
+    background: -webkit-linear-gradient(left, #64696a 50%, white 50%);
+    background: linear-gradient(to right, #64696a 50%, white 50%);
+}
+
+.page-layout-2:first-child {
+    background: -webkit-linear-gradient(left, white 50%, #64696a 50%);
+    background: linear-gradient(to right, white 50%, #64696a 50%);
+}
+
+.page-layout-2 div {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 0 10% 10%;
+    width: 50%;
+}
+
+.page-layout-2 div:first-child { left: 0 }
+
+.page-layout-2:first-child div:last-child,
+.page-layout-2:last-child div:first-child { color: #fff }
+
+.page-layout-2 h3 {
+    margin: 0;
+    font-size: 6em;
+    font-family: "Cardo", serif;
+}
+
+.page-layout-3:last-child {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url(../img/portrait.jpg) no-repeat top left;
+    background-size: cover;
+}
+
+.page-layout-3 div { padding: 10% }
+
+.page-layout-3 h3 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14em;
+    font-family: "Six Caps", sans-serif;
+}
+
+.page-layout-3 p {
+    margin: 0;
+    text-indent: 5px;
+    font-style: italic;
+    font-family: "Cardo", serif;
+}
+
+/* Book navigation */
+
+.bb-custom-wrapper > nav a {
+    position: absolute;
+    z-index: 1000;
+    font-size: 0;
+    opacity: 0.4;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.bb-custom-wrapper > nav a:hover { opacity: 1 }
+
+.bb-custom-wrapper > nav a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(221, 221, 221, 0.7);
+}
+
+.bb-nav-prev,
+.bb-nav-next {
+    top: 50%;
+    left: 25px;
+    margin-top: -15px;
+}
+
+.bb-nav-close {
+    top: 15px;
+    right: 25px;
+}
+
+.bb-nav-next {
+    right: 25px;
+    left: auto;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.bb-custom-wrapper > nav a::before,
+.bb-custom-wrapper > nav a::after {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 1px;
+    height: 50%;
+    background: #333;
+    content: '';
+}
+
+.bb-custom-wrapper > nav a.bb-nav-close::before,
+.bb-custom-wrapper > nav a.bb-nav-close::after {
+    top: 15%;
+    left: 50%;
+    height: 70%;
+}
+
+.bb-custom-wrapper > nav a:not(.bb-nav-close)::before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+.bb-custom-wrapper > nav a:not(.bb-nav-close)::after {
+    top: 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.bb-custom-wrapper > nav a.bb-nav-close::before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.bb-custom-wrapper > nav a.bb-nav-close::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/****** Custom book colors and borders *****/
+
+/* Custom book covers */
+
+.no-csstransforms3d .book[data-book="book-1"],
+.no-js .book[data-book="book-1"],
+.book[data-book="book-1"] .front {
+    background: url(../img/cover1.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover1.svg), #009bdb;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover1.svg), #009bdb;
+}
+
+.book[data-book="book-1"] .inner { border-color: #009bdb }
+
+.book[data-book="book-1"] .cover::before {
+    background: url(../img/spine1.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine1.svg), #009bdb;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine1.svg), #009bdb;
+}
+
+.no-csstransforms3d .book[data-book="book-2"],
+.no-js .book[data-book="book-2"],
+.book[data-book="book-2"] .front {
+    background: url(../img/cover2.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover2.svg), #f6a7a5;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover2.svg), #f6a7a5;
+}
+
+.book[data-book="book-2"] .inner { border-color: #f6a7a5 }
+
+.book[data-book="book-2"] .cover::before {
+    background: url(../img/spine2.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine2.svg), #f6a7a5;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine2.svg), #f6a7a5;
+}
+
+.no-csstransforms3d .book[data-book="book-3"],
+.no-js .book[data-book="book-3"],
+.book[data-book="book-3"] .front {
+    background: url(../img/cover3.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover3.svg), #ebc989;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover3.svg), #ebc989;
+}
+
+.book[data-book="book-3"] .inner { border-color: #ebc989 }
+
+.book[data-book="book-3"] .cover::before {
+    background: url(../img/spine3.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine3.svg), #ebc989;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine3.svg), #ebc989;
+}
+
+.no-csstransforms3d .book[data-book="book-4"],
+.no-js .book[data-book="book-4"],
+.book[data-book="book-4"] .front {
+    background: url(../img/cover4.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover4.svg), #a6a1a5;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover4.svg), #a6a1a5;
+}
+
+.book[data-book="book-4"] .inner { border-color: #a6a1a5 }
+
+.book[data-book="book-4"] .cover::before {
+    background: url(../img/spine4.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine4.svg), #a6a1a5;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine4.svg), #a6a1a5;
+}
+
+.no-csstransforms3d .book[data-book="book-5"],
+.no-js .book[data-book="book-5"],
+.book[data-book="book-5"] .front {
+    background: url(../img/cover5.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover5.svg), #4cbb97;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover5.svg), #4cbb97;
+}
+
+.book[data-book="book-5"] .inner { border-color: #4cbb97 }
+
+.book[data-book="book-5"] .cover::before {
+    background: url(../img/spine5.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine5.svg), #4cbb97;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine5.svg), #4cbb97;
+}
+
+.no-csstransforms3d .book[data-book="book-6"],
+.no-js .book[data-book="book-6"],
+.book[data-book="book-6"] .front {
+    background: url(../img/cover6.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover6.svg), #a1cae5;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover6.svg), #a1cae5;
+}
+
+.book[data-book="book-6"] .inner { border-color: #a1cae5 }
+
+.book[data-book="book-6"] .cover::before {
+    background: url(../img/spine6.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine6.svg), #a1cae5;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine6.svg), #a1cae5;
+}
+
+.no-csstransforms3d .book[data-book="book-7"],
+.no-js .book[data-book="book-7"],
+.book[data-book="book-7"] .front {
+    background: url(../img/cover7.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover7.svg), #ebe6e5;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover7.svg), #ebe6e5;
+}
+
+.book[data-book="book-7"] .inner { border-color: #ebe6e5 }
+
+.book[data-book="book-7"] .cover::before {
+    background: url(../img/spine7.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine7.svg), #ebe6e5;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine7.svg), #ebe6e5;
+}
+
+.no-csstransforms3d .book[data-book="book-8"],
+.no-js .book[data-book="book-8"],
+.book[data-book="book-8"] .front {
+    background: url(../img/cover8.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover8.svg), #f8eb48;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover8.svg), #f8eb48;
+}
+
+.book[data-book="book-8"] .inner { border-color: #f8eb48 }
+
+.book[data-book="book-8"] .cover::before {
+    background: url(../img/spine8.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine8.svg), #f8eb48;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine8.svg), #f8eb48;
+}
+
+.no-csstransforms3d .book[data-book="book-9"],
+.no-js .book[data-book="book-9"],
+.book[data-book="book-9"] .front {
+    background: url(../img/cover9.svg);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover9.svg), #f7a56e;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(../img/cover9.svg), #f7a56e;
+}
+
+.book[data-book="book-9"] .inner { border-color: #f7a56e }
+
+.book[data-book="book-9"] .cover::before {
+    background: url(../img/spine9.svg);
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine9.svg), #f7a56e;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(../img/spine9.svg), #f7a56e;
+}
+
+/* border around bookblock same as book cover color*/
+
+#book-1 { border-color: #009bdb }
+
+#book-2 { border-color: #f6a7a5 }
+
+#book-3 { border-color: #ebc989 }
+
+#book-4 { border-color: #a6a1a5 }
+
+#book-5 { border-color: #4cbb97 }
+
+#book-6 { border-color: #a1cae5 }
+
+#book-7 { border-color: #ebe6e5 }
+
+#book-8 { border-color: #f8eb48 }
+
+#book-9 { border-color: #f7a56e }
+
+/****** Transitions ******/
+
+/* Book open / view inside */
+
+.book {
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.3s 0.3s;
+    transition: transform 0.5s, opacity 0.3s 0.3s;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+}
+
+.csstransformspreserve3d .bookshelf figure.open .cover {
+    -webkit-animation: openSmallBook 0.5s forwards;
+    animation: openSmallBook 0.5s forwards;
+}
+
+.csstransformspreserve3d .bookshelf figure.close .cover {
+    -webkit-animation: closeSmallBook 0.5s forwards;
+    animation: closeSmallBook 0.5s forwards;
+}
+
+@-webkit-keyframes openSmallBook { 
+  55%,
+  100% { -webkit-transform: rotateY(-180deg) }
+}
+
+@keyframes openSmallBook { 
+  55%,
+  100% { transform: rotateY(-180deg) }
+}
+
+@-webkit-keyframes closeSmallBook { 
+  0%,
+  45% { -webkit-transform: rotateY(-180deg) }
+
+  100% { -webkit-transform: rotateY(0deg) }
+}
+
+@keyframes closeSmallBook { 
+  0%,
+  45% { transform: rotateY(-180deg) }
+
+  100% { transform: rotateY(0deg) }
+}
+
+.bookshelf figure.open .book {
+    z-index: 1000;
+    -webkit-animation: scaleUpSmallBook 0.5s forwards;
+    animation: scaleUpSmallBook 0.5s forwards;
+}
+
+.bookshelf figure.close .book {
+    -webkit-animation: scaleDownSmallBook 0.5s forwards;
+    animation: scaleDownSmallBook 0.5s forwards;
+}
+
+@-webkit-keyframes scaleUpSmallBook { 
+  85%,
+  100% { -webkit-transform: scale(1.4) }
+}
+
+@keyframes scaleUpSmallBook { 
+  85%,
+  100% { transform: scale(1.4) }
+}
+
+@-webkit-keyframes scaleDownSmallBook { 
+  0%,
+  15% { -webkit-transform: scale(1.4) }
+
+  100% { -webkit-transform: scale(1) }
+}
+
+@keyframes scaleDownSmallBook { 
+  0%,
+  15% { transform: scale(1.4) }
+
+  100% { transform: scale(1) }
+}
+
+.inner-right {
+    background-color: #ddd;
+    -webkit-transition: background-color 0.5s 0.25s;
+    transition: background-color 0.5s 0.25s;
+}
+
+.open .inner-right {
+    background-color: #f9f9f9;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.bb-custom-wrapper {
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s 0.5s;
+    transition: visibility 0s 0.5s;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.bb-custom-wrapper.show {
+    visibility: visible;
+    -webkit-transition: visibility 0s;
+    transition: visibility 0s;
+    -webkit-animation: openBigBook 0.5s forwards;
+    animation: openBigBook 0.5s forwards;
+}
+
+.no-cssanimations .bb-custom-wrapper.show { opacity: 1 }
+
+.bb-custom-wrapper.hide {
+    -webkit-animation: closeBigBook 0.5s forwards;
+    animation: closeBigBook 0.5s forwards;
+}
+
+.no-cssanimations .bb-custom-wrapper.hide { opacity: 0 }
+
+@-webkit-keyframes openBigBook { 
+  45% {
+      opacity: 0;
+      -webkit-transform: scale(0.95);
+  }
+
+  85% { opacity: 1 }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+  }
+}
+
+@keyframes openBigBook { 
+  45% {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+
+  85% { opacity: 1 }
+
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@-webkit-keyframes closeBigBook { 
+  0%,
+  15% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+  }
+
+  55%,
+  100% {
+      opacity: 0;
+      -webkit-transform: scale(0.95);
+  }
+}
+
+@keyframes closeBigBook { 
+  0%,
+  15% {
+      opacity: 1;
+      transform: scale(1);
+  }
+
+  55%,
+  100% {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+}
+
+/* Details open / view details */
+
+.bookshelf figure {
+    z-index: 100;
+    -webkit-transition: z-index 0s 0.3s;
+    transition: z-index 0s 0.3s;
+}
+
+.bookshelf figure.details-open {
+    z-index: 101;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.csstransformspreserve3d .details-open .book {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform: translateX(-36px) rotateY(90deg);
+    transform: translateX(-36px) rotateY(90deg);
+}
+
+.no-csstransformspreserve3d .details-open .book {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.csstransformspreserve3d .cover::before {
+    -webkit-transition: visibility 0s 0.5s;
+    transition: visibility 0s 0.5s;
+}
+
+.csstransformspreserve3d .details-open .cover::before {
+    visibility: visible;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.details {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.details-open .details {
+    visibility: hidden;
+    opacity: 1;
+    z-index: 10;
+    -webkit-transition: opacity 0.5s, visibility 0s;
+    transition: opacity 0.5s, visibility 0s;
+}
+
+.details ul li {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transform: translateX(30%);
+    transform: translateX(30%);
+}
+
+.details-open .details ul li:first-child {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.details-open .details ul li:nth-child(2) {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+}
+
+.details-open .details ul li:nth-child(3) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.details-open .details ul li:nth-child(4) {
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+}
+
+.details-open .details ul li {
+    opacity: 1;
+    -webkit-transform: translateX();
+    transform: translateX();
+}
+
+/* Details background */
+
+.bookshelf figure::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.bookshelf figure.details-open::before {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s, visibility 0s;
+    transition: opacity 0.3s, visibility 0s;
+}
+
+/* Overlay when viewing details */
+
+.bookshelf figure::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 0;
+    background: rgba(51, 51, 51, 0.1);
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, height 0s 0.3s;
+    transition: opacity 0.3s, height 0s 0.3s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.bookshelf figure.details-open::after {
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 68.75em) { 
+  .bb-custom-wrapper { font-size: 75% }
+
+  .page-layout-3 h3 { font-size: 9em }
+}
+
+@media screen and (max-width: 41.375em) { 
+  .bb-custom-wrapper { font-size: 60% }
+
+  .page-layout-3 h3 { font-size: 6em }
+}
+
+@media screen and (max-width: 29.75em) { 
+  .bb-custom-wrapper { font-size: 40% }
+
+  .page-layout-2 div {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+  }
+
+  .page-layout-2 div:first-child { top: 0 }
+
+  .page-layout-2 {
+      background: -webkit-linear-gradient(top, #64696a 50%, white 50%);
+      background: linear-gradient(to bottom, #64696a 50%, white 50%);
+  }
+
+  .page-layout-2:first-child {
+      background: -webkit-linear-gradient(top, white 50%, #64696a 50%);
+      background: linear-gradient(to bottom, white 50%, #64696a 50%);
+  }
+}
+
+@media screen and (max-width: 26.3125em) { 
+  .details-open .book {
+      -webkit-transform: rotateY(90deg);
+      transform: rotateY(90deg);
+  }
+}
