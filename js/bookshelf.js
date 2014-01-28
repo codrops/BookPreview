@@ -54,10 +54,11 @@
 			perspective.appendChild( this.book );
 			this.el.insertBefore( perspective, this.ctrls );
 		}
-
-		this.closeDetailsCtrl = document.createElement( 'span' )
-		this.closeDetailsCtrl.className = 'close-details';
-		this.details.appendChild( this.closeDetailsCtrl );
+		if( this.details ) {
+			this.closeDetailsCtrl = document.createElement( 'span' )
+			this.closeDetailsCtrl.className = 'close-details';
+			this.details.appendChild( this.closeDetailsCtrl );
+		}
 	}
 
 	Book.prototype._initBookBlock = function() {
@@ -84,8 +85,10 @@
 			this.ctrlBBPrev.addEventListener( 'click', function( ev ) { ev.preventDefault(); self._prevPage(); } );
 		}
 
-		this.ctrls.querySelector( 'a:nth-child(2)' ).addEventListener( 'click', function( ev ) { ev.preventDefault(); self._showDetails(); } );
-		this.closeDetailsCtrl.addEventListener( 'click', function() { self._hideDetails(); } );
+		if( this.details ) {
+			this.ctrls.querySelector( 'a:nth-child(2)' ).addEventListener( 'click', function( ev ) { ev.preventDefault(); self._showDetails(); } );
+			this.closeDetailsCtrl.addEventListener( 'click', function() { self._hideDetails(); } );
+		}
 	}
 
 	Book.prototype._open = function() {
