@@ -666,30 +666,6 @@ body {
     animation: closeSmallBook 0.5s forwards;
 }
 
-@-webkit-keyframes openSmallBook { 
-  55%,
-  100% { -webkit-transform: rotateY(-180deg) }
-}
-
-@keyframes openSmallBook { 
-  55%,
-  100% { transform: rotateY(-180deg) }
-}
-
-@-webkit-keyframes closeSmallBook { 
-  0%,
-  45% { -webkit-transform: rotateY(-180deg) }
-
-  100% { -webkit-transform: rotateY(0deg) }
-}
-
-@keyframes closeSmallBook { 
-  0%,
-  45% { transform: rotateY(-180deg) }
-
-  100% { transform: rotateY(0deg) }
-}
-
 .bookshelf figure.open .book {
     z-index: 1000;
     -webkit-animation: scaleUpSmallBook 0.5s forwards;
@@ -699,30 +675,6 @@ body {
 .bookshelf figure.close .book {
     -webkit-animation: scaleDownSmallBook 0.5s forwards;
     animation: scaleDownSmallBook 0.5s forwards;
-}
-
-@-webkit-keyframes scaleUpSmallBook { 
-  85%,
-  100% { -webkit-transform: scale(1.4) }
-}
-
-@keyframes scaleUpSmallBook { 
-  85%,
-  100% { transform: scale(1.4) }
-}
-
-@-webkit-keyframes scaleDownSmallBook { 
-  0%,
-  15% { -webkit-transform: scale(1.4) }
-
-  100% { -webkit-transform: scale(1) }
-}
-
-@keyframes scaleDownSmallBook { 
-  0%,
-  15% { transform: scale(1.4) }
-
-  100% { transform: scale(1) }
 }
 
 .inner-right {
@@ -763,62 +715,6 @@ body {
 }
 
 .no-cssanimations .bb-custom-wrapper.hide { opacity: 0 }
-
-@-webkit-keyframes openBigBook { 
-  45% {
-      opacity: 0;
-      -webkit-transform: scale(0.95);
-  }
-
-  85% { opacity: 1 }
-
-  100% {
-      opacity: 1;
-      -webkit-transform: scale(1);
-  }
-}
-
-@keyframes openBigBook { 
-  45% {
-      opacity: 0;
-      transform: scale(0.95);
-  }
-
-  85% { opacity: 1 }
-
-  100% {
-      opacity: 1;
-      transform: scale(1);
-  }
-}
-
-@-webkit-keyframes closeBigBook { 
-  0%,
-  15% {
-      opacity: 1;
-      -webkit-transform: scale(1);
-  }
-
-  55%,
-  100% {
-      opacity: 0;
-      -webkit-transform: scale(0.95);
-  }
-}
-
-@keyframes closeBigBook { 
-  0%,
-  15% {
-      opacity: 1;
-      transform: scale(1);
-  }
-
-  55%,
-  100% {
-      opacity: 0;
-      transform: scale(0.95);
-  }
-}
 
 /* Details open / view details */
 
@@ -955,6 +851,60 @@ body {
     opacity: 1;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
+}
+
+/* Animations */
+@-webkit-keyframes openSmallBook { 
+    0% { }
+    55%, 100% { -webkit-transform: rotateY(-180deg) }
+}
+@keyframes openSmallBook { 
+    0% { }
+    55%, 100% { -webkit-transform: rotateY(-180deg); transform: rotateY(-180deg); }
+}
+@-webkit-keyframes closeSmallBook { 
+    0%, 45% { -webkit-transform: rotateY(-180deg) }
+    100% { -webkit-transform: rotateY(0deg) }
+}
+@keyframes closeSmallBook { 
+    0%, 45% { -webkit-transform: rotateY(-180deg); transform: rotateY(-180deg); }
+    100% { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
+}
+@-webkit-keyframes scaleUpSmallBook { 
+    0% { }
+    85%, 100% { -webkit-transform: scale(1.4) }
+}
+@keyframes scaleUpSmallBook { 
+    0% { }
+    85%, 100% { -webkit-transform: scale(1.4); transform: scale(1.4); }
+}
+@-webkit-keyframes scaleDownSmallBook { 
+    0%, 15% { -webkit-transform: scale(1.4) }
+    100% { -webkit-transform: scale(1) }
+}
+@keyframes scaleDownSmallBook { 
+    0%, 15% { -webkit-transform: scale(1.4); transform: scale(1.4); }
+    100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@-webkit-keyframes openBigBook { 
+    0% { }
+    45% { opacity: 0; -webkit-transform: scale(0.95); }
+    85% { opacity: 1 }
+    100% { opacity: 1; -webkit-transform: scale(1); }
+}
+@keyframes openBigBook { 
+    0% { }
+    45% { opacity: 0; -webkit-transform: scale(0.95); transform: scale(0.95); }
+    85% { opacity: 1 }
+    100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
+}
+@-webkit-keyframes closeBigBook { 
+    0%, 15% { opacity: 1; -webkit-transform: scale(1); }
+    55%, 100% { opacity: 0; -webkit-transform: scale(0.95); }
+}
+@keyframes closeBigBook { 
+    0%, 15% { opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
+    55%, 100% { opacity: 0; -webkit-transform: scale(0.95); transform: scale(0.95); }
 }
 
 /* Media Queries */
